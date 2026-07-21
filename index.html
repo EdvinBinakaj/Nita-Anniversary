@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Für Nita 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="game"></canvas>
+
+  <!-- Start Screen -->
+  <div id="start-screen" class="overlay">
+    <div class="card">
+      <div class="hearts-deco">🌸💌🐾</div>
+      <h1>Für meine Nita</h1>
+      <p>Reise durch eure Orte – Hamburg, Paris, Zuhause,<br/>Köln und Düsseldorf. Finde alle Briefe 💕</p>
+      <button id="start-btn" class="big-btn">Spiel starten ✨</button>
+      <p class="hint">Tipp: Am besten im Querformat spielen 🌿</p>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div id="world-name">Hamburg HafenCity</div>
+    <div id="letter-counter">💌 <span id="found-count">0</span> / <span id="total-count">0</span></div>
+    <div id="compass-wrap">
+      <div id="compass-arrow">🐾</div>
+    </div>
+  </div>
+
+  <!-- Proximity prompt -->
+  <button id="open-prompt" class="hidden">💌 Tippen zum Öffnen</button>
+
+  <!-- Joystick -->
+  <div id="joystick-base" class="hidden">
+    <div id="joystick-knob"></div>
+  </div>
+
+  <!-- Letter modal -->
+  <div id="letter-modal" class="overlay hidden">
+    <div id="letter-paper">
+      <div class="wax-seal">💕</div>
+      <h2 id="letter-title"></h2>
+      <p id="letter-text"></p>
+      <button id="close-letter" class="big-btn small">Schließen</button>
+    </div>
+  </div>
+
+  <!-- Welt-Übergang -->
+  <div id="world-transition" class="overlay hidden">
+    <div class="card">
+      <div class="hearts-deco">🌉✨💌</div>
+      <h1 id="world-transition-title">Welt geschafft!</h1>
+      <p id="world-transition-text"></p>
+      <button id="next-world-btn" class="big-btn">Nächste Welt 🌿</button>
+    </div>
+  </div>
+
+  <!-- Finale -->
+  <div id="finale-modal" class="overlay hidden">
+    <div class="card">
+      <div class="hearts-deco">🎉💖🎉</div>
+      <h1>Du hast alle Briefe gefunden!</h1>
+      <p id="finale-text"></p>
+      <button id="restart-btn" class="big-btn">Nochmal spielen 🌷</button>
+    </div>
+  </div>
+
+  <div id="loading">Die HafenCity wächst gerade 🌊...</div>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="letters.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
